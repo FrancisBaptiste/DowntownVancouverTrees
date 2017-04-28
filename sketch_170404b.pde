@@ -1,3 +1,4 @@
+import processing.pdf.*;
 
 Table table;
 PFont font;
@@ -55,11 +56,11 @@ void setup(){
   
   //set some drawing info
   noLoop();
-  size(800,800);
+  size(800,800,PDF, "trees.pdf");
   stroke(0);
   fill(0);
   textFont(font,9);
-  background(255, 255, 255);
+  background(255, 255, 255);  
 }
 
 void draw(){
@@ -79,7 +80,7 @@ void draw(){
     //for the reverse
     //line(0, 0, 230, 0);
     
-    stroke(150 + treeTotals[i], 0, treeTotals[i]*2);
+    stroke(0, 150 + treeTotals[i], 0);
     line(50, 0, 50 + treeTotals[i]*2, 0);
     
     //reversed
@@ -93,12 +94,13 @@ void draw(){
     
     text(thisTree, 230, 0);
   }
-  
+  exit();
 }
 
 //for capturing the image
 void mousePressed(){
   saveFrame("test-##.png");
+  endRecord();
 }
 
 //this is a function for checking if a string exists in an array
