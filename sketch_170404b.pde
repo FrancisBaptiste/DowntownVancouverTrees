@@ -80,7 +80,14 @@ void draw(){
     //for the reverse
     //line(0, 0, 230, 0);
     
-    stroke(0, 150 + treeTotals[i], 0);
+    float colVal = 75 + treeTotals[i];
+    float colVal2 = 0;
+    if(colVal > 200){
+      colVal = 200;
+      colVal2 = 30;
+    }
+    
+    stroke(colVal2, colVal, colVal2);
     line(50, 0, 50 + treeTotals[i]*2, 0);
     
     //reversed
